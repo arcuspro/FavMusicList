@@ -1,5 +1,5 @@
 import { DarkThemeSlider, LightThemeSlider } from '@/src/assets';
-import { Theme } from '@/src/styles';
+import { Theme } from '@/src/theme';
 import styled from '@emotion/styled';
 import { useRef } from 'react';
 

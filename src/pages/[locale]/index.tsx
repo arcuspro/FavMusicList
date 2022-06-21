@@ -1,4 +1,4 @@
-import { getStaticPaths, makeStaticProps } from '@/src/lib/getStatic';
+import { makeStaticProps, getStaticPaths } from '@/src/lib/getStatic';
 import { HomePage } from '@/src/components/pages/HomePage';
 
 const Index = (props: any) => {

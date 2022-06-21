@@ -1,4 +1,4 @@
-import { ITheme } from '@/src/data/themeData';
+import { ITheme } from '@/src/theme/themeData';
 
 import '@emotion/react';
 

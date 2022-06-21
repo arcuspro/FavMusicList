@@ -1,9 +1,11 @@
 
   import React, { useEffect } from 'react';
   import { useTranslation } from 'next-i18next';
-import { Dropdown, LanguageSwitcher, Spinner, ThemeSlider } from '@/src/components/atoms';
+import { Spinner, } from '@/src/components/atoms';
 import { colors } from '@/src/styles';
 import styled from '@emotion/styled';
+import { LanguageSwitcher } from '@/src/translations';
+import { ThemeSlider } from '@/src/theme';
   
   export const HomePage = () => {
     const { t } = useTranslation('homepage');

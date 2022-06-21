@@ -1,6 +1,6 @@
 import { HomePage } from '@/src/components/pages/HomePage';
 import { makeStaticProps } from '@/src/lib/getStatic';
-import { useTranslationRedirect } from '@/src/lib/redirect';
+import { useTranslationRedirect  } from '@/src/lib/redirect';
 
 const Index = () => {
   const { loading } = useTranslationRedirect();

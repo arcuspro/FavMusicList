@@ -1,4 +1,4 @@
-import { Theme } from '@/src/styles';
+import { Theme } from '@/src/theme';
 
 export const Chevron = ({ className }: { className?: string }) => {
   const { theme } = Theme.useContainer();

@@ -3,11 +3,12 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import languageDetector from '@/src/lib/lngDetector';
 import nextI18nextConfig from '@/next-i18next.config';
-import { getFlagByCode } from '@/src/utils';
 import { Chevron } from '@/src/assets';
-import { Dropdown, HoverMenu } from '@/src/styles/reusableStyles';
+import { getFlagByCode } from '@/src/translations';
+import { Dropdown, HoverMenu } from '@/src/theme/reusableStyles';
+import languageDetector from '@/src/lib/lngDetector'
+
 
 const Container = styled.div`
   display: flex;
@@ -34,9 +35,9 @@ const Container = styled.div`
     cursor: pointer;
   }
 
-  /* svg:not(.chevron) {
+  svg:not(.chevron) {
     border: 1px solid ${({ theme }) => theme.elementBorder};
-  } */
+  }
 `;
 
 const CurrentFlag = styled.div`

@@ -1,4 +1,4 @@
-import { darkTheme, lightTheme } from '@/src/data';
+import { darkTheme, lightTheme } from '@/src/theme';
 import { useIsomorphicEffect } from '@/src/hooks';
 import { useState } from 'react';
 import { createContainer } from 'unstated-next';
