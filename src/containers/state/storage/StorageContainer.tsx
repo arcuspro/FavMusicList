@@ -1,13 +1,76 @@
+import { AlbumListType } from '@/src/types/type';
+import { compareValues } from '@/src/utils';
 import { useEffect, useState } from 'react';
 import { createContainer } from 'unstated-next';
 
 
+const storageKey: string = "storageList"
+
 const StorageContainer = () => {
-    const [state2, setState2] = useState<string>('');
-    
+    const [albumListData, setAlbumListData] = useState<AlbumListType[]>([]);
+
+    const saveStorage = (object: object) => {
+        localStorage.setItem(storageKey, JSON.stringify(object))
+    }
+
+    const getStorage = () => {
+        if (window) {
+            const storage = localStorage.getItem(storageKey)
+            if (storage) {
+                setAlbumListData(JSON.parse(storage))
+            } else {
+                throw Error("something wrong with get Storage")
+            }
+        }
+    }
+
+    const addToList = (response: AlbumListType) => {
+        setAlbumListData((prevState) => [...prevState, response])
+        saveStorage([...albumListData, response])
+    }
+
+    const removeElement = (id: string) => {
+        setAlbumListData((list) => list.filter((element) => element.id !== id))
+        saveStorage(albumListData.filter((element) => element.id !== id))
+    }
+
+    const handleFavorite = (id: string) => {
+        let updatedList = albumListData.map((element) => {
+            if (element.id === id) {
+                return { ...element, isFavorite: !element.isFavorite }
+            }
+            return element
+        })
+        setAlbumListData(updatedList)
+        saveStorage(updatedList)
+    }
+
+    const sortByKey = (key: string) => {
+        console.log("before sorted", albumListData)
+        // const sortedList = albumListData.sort(compareValues(key))
+        // console.log("after sorted", sortedList)
+        // setAlbumListData([])
+        // setAlbumListData(sortedList)
+    }
+
+    // useEffect(()=>{
+    //     console.log("save", albumListData)
+    //     saveStorage()
+    //     console.log("albumList", albumListData)
+    // },[addToList])
+
+    useEffect(() => {
+        getStorage()
+    }, [])
 
     return {
-    state2
+        albumListData,
+        setAlbumListData,
+        removeElement,
+        handleFavorite,
+        sortByKey,
+        addToList,
+        getStorage
     };
 };
 

@@ -1,7 +1,18 @@
 {
-  "getStarted": "Get started",
-  "learnMore": "Learn more",
-  "changelog": "Changelog",
-  "signup": "Sign Up",
-  "copyright": "Copyright © 2022 ArcusPro Wszelkie prawa zastrzeżone."
+  "sort": "Sort by",
+  "delete": "Delete album",
+  "favorite": "Set as best of the best",
+  "unFavorite": "Remove from best of best",
+  "formTitle": "Add your music album",
+  "albumName": "Album Name",
+  "sendBtn": "Add",
+  "sendError": "There was an error adding the album. Please try again later.",
+  "sendSuccess": "Your album has been added successfully!",
+  "formValidation": {
+    "albumName": {
+      "required": "An album name is required",
+      "min": "Too short name",
+      "max": "Too long name"
+    }
+  }
 }

@@ -5,7 +5,7 @@ const Index = (props: any) => {
   return <HomePage />;
 };
 
-const getStaticProps = makeStaticProps(['homepage', 'common']);
+const getStaticProps = makeStaticProps(['common']);
 export { getStaticPaths, getStaticProps };
 
 export default Index;

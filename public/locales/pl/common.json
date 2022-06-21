@@ -1,7 +1,18 @@
 {
-  "getStarted": "Zacznij działać",
-  "learnMore": "Dowiedz się więcej",
-  "changelog": "Dziennik",
-  "signup": "Zapisz się",
-  "copyright": "Copyright © 2022 ArcusPro Wszelkie prawa zastrzeżone."
+  "sort": "Sortuj wg",
+  "delete": "Usuń album",
+  "favorite": "Dodaj jako najlepszy z najlepszych",
+  "unFavorite": "Nie jest najlepszy",
+  "formTitle": "Dodaj swój album muzyczny",
+  "albumName": "Nazwa Albumu",
+  "sendBtn": "Dodaj",
+  "sendError": "Wystąpił błąd podczas dodawania albumu. Prosimy spróbować ponownie później.",
+  "sendSuccess": "Twój album został dodany pomyślnie !",
+  "formValidation": {
+    "albumName": {
+      "required": "Wymagane jest podanie nazwy albumu",
+      "min": "Zbyt krótka nazwa",
+      "max": "Zbyt długie nazwa"
+    }
+  }
 }

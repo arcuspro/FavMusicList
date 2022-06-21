@@ -1,2 +1,1 @@
-export * from './utilitaryFunction';
-export * from './i18Helpers'
+export * from './utilitaryFunction'

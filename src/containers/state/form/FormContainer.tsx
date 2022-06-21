@@ -4,11 +4,14 @@ import { createContainer } from 'unstated-next';
 
 const FormContainer = () => {
     const [state, setState] = useState<string>('');
-    
+
+
+    const onSubmit = (data: any) => console.log(data);
 
     return {
-    state
-    };
+    state,
+    onSubmit
+    }
 };
 
 const useFormContainer = createContainer(FormContainer);

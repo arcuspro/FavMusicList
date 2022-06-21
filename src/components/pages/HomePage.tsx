@@ -1,21 +1,19 @@
-
-  import React, { useEffect } from 'react';
-  import { useTranslation } from 'next-i18next';
-import { Spinner, } from '@/src/components/atoms';
+import React, { useEffect } from 'react';
+import { useTranslation } from 'next-i18next';
+import { AddAlbumForm, AlbumList, Spinner, } from '@/src/components';
 import { colors } from '@/src/styles';
 import styled from '@emotion/styled';
-import { LanguageSwitcher } from '@/src/translations';
-import { ThemeSlider } from '@/src/theme';
+
   
   export const HomePage = () => {
-    const { t } = useTranslation('homepage');
+    const { t } = useTranslation('common');
   
     return (
       <Container>
-        Home Page
-        <Spinner color={colors.white} spinSize={3} size={28} />
-        <LanguageSwitcher />
-        <ThemeSlider/>
+        <AddAlbumForm />
+        <ListWrapper>
+          <AlbumList/>
+        </ListWrapper>
       </Container>
     );
   };
@@ -23,8 +21,11 @@ import { ThemeSlider } from '@/src/theme';
   const Container = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
     padding: 40px;
-    background-color: ${({ theme }) => theme.themeColor};
+    width: 100%;
+  `
+  const ListWrapper = styled.div`
+    margin-left: 50px;
+    width: 100%;
   `
   
