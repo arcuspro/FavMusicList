@@ -1,35 +1,125 @@
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-}
+@import url('//fonts.googleapis.com/earlyaccess/opensanshebrew.css');
 
 *,
-*:before,
-*:after {
-    box-sizing: inherit;
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
 }
 
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+button {
+  box-sizing: border-box;
+  font-family: 'Open Sans Hebrew', sans-serif;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  filter: saturate(2);
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+button,
+select {
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+html {
+  font-size: 62.5%;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 1230px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+input,
+select {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.6rem;
+  color: #111;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 6.25rem;
+}
+h2 {
+  font-size: 4rem;
+  line-height: 5rem;
+}
+h3 {
+  font-size: 3rem;
+  line-height: 3.75rem;
+}
+h4 {
+  font-size: 2.5rem;
+  line-height: 5rem;
+}
+h5 {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
 p,
-ol,
-ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
+ul,
+ol {
+  font-size: 2rem;
+  line-height: 3rem;
 }
 
-ol,
-ul {
-    list-style: none;
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+p,
+a {
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 700;
+}
+
+svg path {
+  transition: fill 0.3s ease-in-out;
+}
+
+.owl-carousel .owl-stage {
+  transition-timing-function: linear !important;
+  display: flex;
+  align-items: center;
 }

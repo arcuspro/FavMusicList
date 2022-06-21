@@ -1,7 +1,15 @@
-import { Layout } from '@/src/layouts';
+import { HomePage } from '@/src/components/pages/HomePage';
+import { makeStaticProps } from '@/src/lib/getStatic';
+import { useTranslationRedirect } from '@/src/lib/redirect';
 
-const HomePage = () => {
-    return <Layout pageTitle="HomePage"></Layout>;
+const Index = () => {
+  const { loading } = useTranslationRedirect();
+
+  if (loading) return <></>;
+
+  return <HomePage />;
 };
 
-export default HomePage;
+export const getStaticProps = makeStaticProps(['homepage', 'common'], true);
+
+export default Index;

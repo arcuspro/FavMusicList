@@ -3,11 +3,11 @@ import { createContainer } from 'unstated-next';
 
 
 const StorageContainer = () => {
-    const [state, setState] = useState<string>('');
+    const [state2, setState2] = useState<string>('');
     
 
     return {
-    
+    state2
     };
 };
 
