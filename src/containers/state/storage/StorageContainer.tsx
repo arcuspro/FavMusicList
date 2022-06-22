@@ -18,9 +18,7 @@ const StorageContainer = () => {
             const storage = localStorage.getItem(storageKey)
             if (storage) {
                 setAlbumListData(JSON.parse(storage))
-            } else {
-                throw Error("something wrong with get Storage")
-            }
+            } 
         }
     }
 
