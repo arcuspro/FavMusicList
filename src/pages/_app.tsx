@@ -18,10 +18,11 @@ const App = (props: AppProps) => {
   );
 };
 
+
 const ThemedApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={Theme.useContainer().theme}>
-      <Layout>
+      <Layout pageTitle={'FavMusicList'}>
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
