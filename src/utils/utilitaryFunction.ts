@@ -1,10 +1,8 @@
 
 
-export function compareValues(data: Array<any>,key: string, order = 'asc') {
-    let copyData = JSON.parse(JSON.stringify(data))
+export const compareValues = (key: string, order: 'asc' | 'desc') => {
     return function innerSort(a: any, b: any) {
       if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-        // property doesn't exist on either object
         return 0;
       }
   

@@ -10,6 +10,52 @@ import { Dropdown, HoverMenu } from '@/src/theme/reusableStyles';
 import languageDetector from '@/src/lib/lngDetector'
 
 
+
+export const LanguageSwitcher = () => {
+  const { asPath, query } = useRouter();
+
+  const { locales, defaultLocale } = nextI18nextConfig.i18n;
+  const isPageTranslated = query.locale && query.locale !== 'en';
+
+  const currentLocale = (query.locale as string) || defaultLocale;
+
+  const languages = locales
+    .filter((locale) => locale !== currentLocale)
+    .map((el) => {
+      let pathArray = asPath.split('/').filter((el) => el);
+
+      if (isPageTranslated) pathArray.shift();
+      if (el !== 'en') pathArray.unshift(el);
+
+      const path = '/' + pathArray.join('/');
+
+      return (
+        <Link key={el} href={path}>
+          <a>
+            <Language
+              className="language"
+              onClick={() => languageDetector.cache!(el)}>
+              {getFlagByCode(el)}
+            </Language>
+          </a>
+        </Link>
+      );
+    });
+
+  return (
+    <Container>
+      <Dropdown>
+        <CurrentFlag id="currentflag">
+          {getFlagByCode(currentLocale, true)}
+          <Chevron className="no-default-fill" />
+        </CurrentFlag>
+        <HoverMenu langSwitcher>{languages}</HoverMenu>
+      </Dropdown>
+    </Container>
+  );
+};
+
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -74,47 +120,3 @@ const Language = styled.div`
     bottom: 1px;
   }
 `;
-
-export const LanguageSwitcher = () => {
-  const { asPath, query } = useRouter();
-
-  const { locales, defaultLocale } = nextI18nextConfig.i18n;
-  const isPageTranslated = query.locale && query.locale !== 'en';
-
-  const currentLocale = (query.locale as string) || defaultLocale;
-
-  const languages = locales
-    .filter((locale) => locale !== currentLocale)
-    .map((el) => {
-      let pathArray = asPath.split('/').filter((el) => el);
-
-      if (isPageTranslated) pathArray.shift();
-      if (el !== 'en') pathArray.unshift(el);
-
-      const path = '/' + pathArray.join('/');
-
-      return (
-        <Link key={el} href={path}>
-          <a>
-            <Language
-              className="language"
-              onClick={() => languageDetector.cache!(el)}>
-              {getFlagByCode(el)}
-            </Language>
-          </a>
-        </Link>
-      );
-    });
-
-  return (
-    <Container>
-      <Dropdown>
-        <CurrentFlag id="currentflag">
-          {getFlagByCode(currentLocale, true)}
-          <Chevron className="no-default-fill" />
-        </CurrentFlag>
-        <HoverMenu langSwitcher>{languages}</HoverMenu>
-      </Dropdown>
-    </Container>
-  );
-};

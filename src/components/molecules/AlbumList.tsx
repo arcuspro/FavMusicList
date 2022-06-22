@@ -1,8 +1,8 @@
-import { Dropdown, ToolTipText } from "@/src/components";
+import { Dropdown, SortAlbumDropdown, ToolTipText } from "@/src/components";
 import { useStorage } from "@/src/containers"
 import styled from "@emotion/styled"
 import dateFormat from "dateformat";
-import { useEffect, useState, useTransition } from "react";
+import { useState } from "react";
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -12,14 +12,14 @@ import GridViewIcon from '@mui/icons-material/GridView';
 
 export const AlbumList = () => {
 
-    const { albumListData, removeElement, handleFavorite, sortByKey, getStorage } = useStorage()
+    const { albumListData, removeElement, handleFavorite } = useStorage()
     const { t } = useTranslation('common')
     const [toggleView, setToggleView] = useState<boolean>(false)
 
     return (
         <Wrapper>
             <ButtonSettingsContainer>
-                <Dropdown name={t('sort')} children={undefined} />
+                <SortAlbumDropdown/>
                 <ViewToggleContainer>
                     <IconButtonContainer onClick={() => setToggleView(true)}>
                         <ListIcon style={{ width: '35px', height: "35px" }} />
@@ -35,7 +35,7 @@ export const AlbumList = () => {
                     albumListData.map((v) => {
                         return (
                             <ElementContainer toggleView={toggleView} key={v.id} >
-                                <p onClick={() => sortByKey('albumName')} >{v.albumName}</p>
+                                <p>{v.albumName}</p>
                                 <p>{dateFormat(v.createDate, "mmmm dS, yyyy, h:MM:ss TT")}</p>
                                 <ElementButtonWrapper>
                                     <IconButtonContainer onClick={() => removeElement(v.id)}>

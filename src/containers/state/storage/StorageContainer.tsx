@@ -45,19 +45,43 @@ const StorageContainer = () => {
         saveStorage(updatedList)
     }
 
-    const sortByKey = (key: string) => {
+    const sortByKey = (key: string, sortType: 'asc' | 'desc') => {
         console.log("before sorted", albumListData)
-        // const sortedList = albumListData.sort(compareValues(key))
-        // console.log("after sorted", sortedList)
-        // setAlbumListData([])
-        // setAlbumListData(sortedList)
+        setAlbumListData((v)=> [...v].sort(compareValues(key, sortType)))
     }
 
-    // useEffect(()=>{
-    //     console.log("save", albumListData)
-    //     saveStorage()
-    //     console.log("albumList", albumListData)
-    // },[addToList])
+    const sortByNameAscending = () => {
+        sortByKey('albumName', 'asc')
+    }
+
+    const sortByNameDescending = () => {
+        sortByKey('albumName', 'desc')
+    }
+
+    const sortByIdAscending = () => {
+        sortByKey('id', 'asc')
+    }
+
+    const sortByIdDescending = () => {
+        sortByKey('id', 'desc')
+    }
+
+    const sortByDateAscending = () => {
+        sortByKey('createDate', 'asc')
+    }
+
+    const sortByDateDescending = () => {
+        sortByKey('createDate', 'desc')
+    }
+
+    const sortByIsBest = () => {
+        sortByKey('isFavorite', 'desc')
+    }
+
+    const sortByIsNotBest = () => {
+        sortByKey('isFavorite', 'asc')
+    }
+
 
     useEffect(() => {
         getStorage()
@@ -70,7 +94,15 @@ const StorageContainer = () => {
         handleFavorite,
         sortByKey,
         addToList,
-        getStorage
+        getStorage,
+        sortByNameAscending,
+        sortByNameDescending,
+        sortByIdAscending,
+        sortByIdDescending,
+        sortByDateAscending,
+        sortByDateDescending,
+        sortByIsBest,
+        sortByIsNotBest
     };
 };
 

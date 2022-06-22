@@ -1,5 +1,4 @@
 {
-  "sort": "Sortuj wg",
   "delete": "Usuń album",
   "favorite": "Dodaj jako najlepszy z najlepszych",
   "unFavorite": "Nie jest najlepszy",
@@ -14,5 +13,16 @@
       "min": "Zbyt krótka nazwa",
       "max": "Zbyt długie nazwa"
     }
+  },
+  "sort": {
+    "title": "Sortuj wg",
+    "nameAscending": "Nazwa rosnąco",
+    "nameDescending": "Name malejąco",
+    "idAscending": "Id rosnąco",
+    "idDescending": "Id malejąco",
+    "dateAscending": "Date rosnąco",
+    "dateDescending": "Date malejąco",
+    "favotriteAscending": "Najlepsze rosnąco",
+    "favoriteDescending": "Najlepsze malejąco"
   }
 }

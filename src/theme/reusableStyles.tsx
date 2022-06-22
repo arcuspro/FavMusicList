@@ -61,7 +61,9 @@ export const HoverMenu = styled.div<{ langSwitcher?: boolean }>`
 
 export const DropdownItem = styled.div`
   display: flex;
-
+  :hover {
+    background-color: ${({ theme }) => theme.altColor};
+  }
   svg {
     height: 2.6rem;
     margin-right: 10px;

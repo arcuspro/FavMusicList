@@ -49,7 +49,6 @@ export const AddAlbumForm = () => {
             };
 
             if (response) {
-                // setAlbumListData((prevState)=> [...prevState, response])
                 addToList(response)
                 toast.success(t('sendSuccess'));
                 resetForm();

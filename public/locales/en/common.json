@@ -1,5 +1,5 @@
 {
-  "sort": "Sort by",
+
   "delete": "Delete album",
   "favorite": "Set as best of the best",
   "unFavorite": "Remove from best of best",
@@ -14,5 +14,16 @@
       "min": "Too short name",
       "max": "Too long name"
     }
+  },
+  "sort": {
+    "title": "Sort by",
+    "nameAscending": "Name Ascending",
+    "nameDescending": "Name Descending",
+    "idAscending": "Id Ascending",
+    "idDescending": "Id Descending",
+    "dateAscending": "Date Ascending",
+    "dateDescending": "Date Descending",
+    "favotriteAscending": "Favorite Ascending",
+    "favoriteDescending": "Favorite Descending"
   }
 }
