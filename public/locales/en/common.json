@@ -1,0 +1,29 @@
+{
+
+  "delete": "Delete album",
+  "favorite": "Set as best of the best",
+  "unFavorite": "Remove from best of best",
+  "formTitle": "Add your music album",
+  "albumName": "Album Name",
+  "sendBtn": "Add",
+  "sendError": "There was an error adding the album. Please try again later.",
+  "sendSuccess": "Your album has been added successfully!",
+  "formValidation": {
+    "albumName": {
+      "required": "An album name is required",
+      "min": "Too short name",
+      "max": "Too long name"
+    }
+  },
+  "sort": {
+    "title": "Sort by",
+    "nameAscending": "Name Ascending",
+    "nameDescending": "Name Descending",
+    "idAscending": "Id Ascending",
+    "idDescending": "Id Descending",
+    "dateAscending": "Date Ascending",
+    "dateDescending": "Date Descending",
+    "favotriteAscending": "Favorite Ascending",
+    "favoriteDescending": "Favorite Descending"
+  }
+}

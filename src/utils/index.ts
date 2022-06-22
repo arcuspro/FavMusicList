@@ -1,1 +1,1 @@
-export * from './utilitaryFunction';
+export * from './utilitaryFunction'
