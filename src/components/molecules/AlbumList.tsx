@@ -36,11 +36,11 @@ export const AlbumList = () => {
                         return (
                             <ElementContainer toggleView={toggleView} key={v.id} >
                                 <p>{v.albumName}</p>
-                                <p>{dateFormat(v.createDate, "mmmm dS, yyyy, h:MM:ss TT")}</p>
-                                <ElementButtonWrapper>
+                                <DateContainer><p>{dateFormat(v.createDate, "mmmm dS, yyyy, h:MM:ss TT")}</p></DateContainer>
+                                <ElementButtonWrapper toggleView={toggleView}>
                                     <IconButtonContainer onClick={() => removeElement(v.id)}>
                                         <ToolTipText toolTipText={t('delete')}>
-                                            <DeleteIcon style={{ width: '40px', height: "40px" }} />
+                                            <DeleteIcon style={{ width: '40px', height: "40px", marginRight: toggleView ? '0' : '20px' }} />
                                         </ToolTipText>
                                     </IconButtonContainer>
                                     {v.isFavorite ? (
@@ -69,24 +69,38 @@ export const AlbumList = () => {
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-`
-
-const ButtonSettingsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-left: 50px;
-`
-
-const ViewToggleContainer = styled.div`
-    margin-left: auto;
-    margin-right: 50px;
+    @media (max-width: 600px) {
+      margin-top: 30px;
+    }
 `
 
 const Container = styled.div<{ toggleView: boolean }>`
     display: grid;
     grid-template-columns: ${({ toggleView }) => toggleView ? 'repeat(1, minmax(0, 1fr))' : 'repeat(auto-fill, 200px)'};
     grid-gap: 4 5;
+    @media (max-width: 600px) {
+      margin: 0 auto 0 auto;
+    }
 `
+
+const ButtonSettingsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+
+`
+
+const ViewToggleContainer = styled.div`
+    margin-left: auto;
+    margin-right: 50px;
+    @media (max-width: 600px) {
+        display: flex;
+        flex-direction: row;
+        margin-right: 40px;
+    }
+`
+
+
 const IconButtonContainer = styled.button`
     background-color: inherit;
     border: none;
@@ -111,9 +125,17 @@ const ElementContainer = styled.div<{ toggleView: boolean }>`
     }
 `
 
-const ElementButtonWrapper = styled.div`
+const ElementButtonWrapper = styled.div<{ toggleView: boolean }>`
     display: flex;
     flex-direction: row;
-    margin-left: auto;
-    margin-right: 50px;
+    justify-content: ${({ toggleView }) => toggleView ? 'none' : 'space-between'} ;
+    margin-right:  ${({ toggleView }) => toggleView ? '30px' : '0'};
+`
+
+const TextContainer = styled.div`
+    
+`
+
+const DateContainer = styled.div`
+  margin-left: auto;
 `

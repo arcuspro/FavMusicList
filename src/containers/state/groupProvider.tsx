@@ -1,6 +1,6 @@
-import { FormProvider, StorageProvider } from '@/src/containers';
+import {  StorageProvider } from '@/src/containers';
 
-const providers = [FormProvider, StorageProvider];
+const providers = [ StorageProvider];
 
 export const ProviderGroup = ({ children }: any) => {
     const ReducedProviders = providers.reduceRight((children, Provider) => {

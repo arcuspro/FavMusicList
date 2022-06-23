@@ -23,9 +23,15 @@ import styled from '@emotion/styled';
     flex-direction: row;
     padding: 40px;
     width: 100%;
+    @media (max-width: 600px) {
+      flex-direction: column;
+  }
   `
   const ListWrapper = styled.div`
     margin-left: 50px;
     width: 100%;
+    @media (max-width: 600px) {
+      margin: 20px 0 0 0;
+    }
   `
   
