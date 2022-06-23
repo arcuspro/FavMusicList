@@ -44,7 +44,6 @@ const StorageContainer = () => {
     }
 
     const sortByKey = (key: string, sortType: 'asc' | 'desc') => {
-        console.log("before sorted", albumListData)
         setAlbumListData((v)=> [...v].sort(compareValues(key, sortType)))
     }
 

@@ -102,6 +102,7 @@ const ElementContainer = styled.div<{ toggleView: boolean }>`
    background-color: ${({ theme }) => theme.altColor};
    border-radius: 20px;
    margin: 10px;
+   padding-left:  ${({ toggleView }) => toggleView ? '30px' : '0px'};
    cursor: pointer;
     p {
         margin: 10px;
@@ -113,4 +114,6 @@ const ElementContainer = styled.div<{ toggleView: boolean }>`
 const ElementButtonWrapper = styled.div`
     display: flex;
     flex-direction: row;
+    margin-left: auto;
+    margin-right: 50px;
 `
